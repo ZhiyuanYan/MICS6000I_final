@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/block.h
+vector
+-
+
+../include/calculate.h
+bits/stdc++.h
+-
+block.h
+../include/block.h
+
+/data/zhiyuany/Non-Slicing_FloorPlanning/src/calculate.cpp
+calculate.h
+/data/zhiyuany/Non-Slicing_FloorPlanning/src/calculate.h
+
