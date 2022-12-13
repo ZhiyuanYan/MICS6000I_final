@@ -280,9 +280,9 @@ while(Temperature>freezing_temperature)
 			move_final = move;
 			accepted++;
 		}
-		else
+		else 
 		{
-			rejected++;
+			rejected++;///sdss
 			if(move==0)
 				swap_positive(random1,random2, Temperature);
 			else if(move == 1)
