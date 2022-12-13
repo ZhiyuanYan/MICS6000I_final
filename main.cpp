@@ -139,10 +139,17 @@ for(int i=0; i<B_ptr.size(); i++)
 	pos_seq.push_back(B_ptr[i]);
 	neg_seq.push_back(B_ptr[i]);	
 }
-
-///////////////////////////  Initial Run //////////////////////////////////
 calculate_fanin_out();
 calculate_HCG_VCG();
+// while(Width_Final>chip_width){
+// 	int random1 = rand()%B_ptr.size();
+// 	int random2 = rand()%B_ptr.size();
+//  	swap_both(random1,random2, 0);
+// 	calculate_fanin_out();
+// 	calculate_HCG_VCG();
+// }
+///////////////////////////  Initial Run //////////////////////////////////
+
 cout<< "Chip Width: " << Width_Final << " Chip Height: " << Height_Final << endl;
 //cout << endl <<endl;
 
@@ -183,7 +190,7 @@ bool  b;
 bool obj = 0;
 
 /////////////////////////////////////////////////////////////////////////////
-string var7 = "result_rotate_all/";
+string var7 = "result_new_func/";
 string constant_var7 = numBlocks_st +"_Results.csv";
 string var8;
 if(Annealing_Type == "-withouttb")
@@ -263,13 +270,18 @@ while(Temperature>freezing_temperature)
 		Delta_Area = next_Area - current_Area;
 		Delta_Height = Height_Final - current_Height;
 		double alpha = 0.2;
-		Delta_Total = (alpha*(Width_Final - chip_width) + (1-alpha)*Delta_Area);
+		// Delta_Total = (alpha*(Width_Final - chip_width) + (1-alpha)*Delta_Area);
+		Delta_Total = chip_width*Height_Final;
 		bool b = AcceptedMove(Delta_Total,Temperature);
 		bool c =Tabu_judgement(random1, random2, move);
-		if (Delta_Area < 0){
+		bool d = true;
+		if(Width_Final>chip_width){
+			d = false;
+		}
+		if (Delta_Total < 0){
 			c = true;
 		}
-		if(b&c)
+		if(b&c&d)
 		{
 			current_Area = next_Area;
 			current_Height = Height_Final;
@@ -321,7 +333,7 @@ Temperature = Temperature*Temperature_Step;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////// ### Write Everything to a File //////////////////////////////////////////////
-string var1 = "result_rotate_all/";
+string var1 = "result_new_func/";
 string constant_val = numBlocks_st + ".txt";
 string var2; 
 //cout << Annealing_Type << endl;
