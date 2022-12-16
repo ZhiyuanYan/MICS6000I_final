@@ -5,6 +5,8 @@
 
 `cd build`
 
-`cmake ..`
-
 `make`
+
+`cd ..`
+
+`./build/floorplan 2_floorplan -withtb`
