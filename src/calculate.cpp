@@ -207,26 +207,26 @@ void swap_positive(int x, int y, double Temperature)
 	calculate_fanin_out();
 	calculate_HCG_VCG();
 	// if (Temperature < 20){
-	double unrotate_area = calculate_Area();
-	int move = rand()%3;
+	// double unrotate_area = calculate_Area();
+	// int move = rand()%3;
 
-	if(move==0)
-		rotate_both(x,y);
-	else if(move == 1)
-		rotate_x(x);
-	else if(move == 2)
-		rotate_y(y);	
-	calculate_fanin_out();
-	calculate_HCG_VCG();
-	double rotate_area = calculate_Area();
-	if (unrotate_area<rotate_area){
-		if(move==0)
-			rotate_both(x,y);
-		else if(move == 1)
-			rotate_x(x);
-		else if(move == 2)
-			rotate_y(y);		
-	}
+	// if(move==0)
+	// 	rotate_both(x,y);
+	// else if(move == 1)
+	// 	rotate_x(x);
+	// else if(move == 2)
+	// 	rotate_y(y);	
+	// calculate_fanin_out();
+	// calculate_HCG_VCG();
+	// double rotate_area = calculate_Area();
+	// if (unrotate_area<rotate_area){
+	// 	if(move==0)
+	// 		rotate_both(x,y);
+	// 	else if(move == 1)
+	// 		rotate_x(x);
+	// 	else if(move == 2)
+	// 		rotate_y(y);		
+	// }
 	// calculate_fanin_out();
 	// calculate_HCG_VCG();
 	// }
@@ -243,30 +243,30 @@ void swap_negative(int x, int y, double Temperature)
 	swap(B_ptr[x]->neg_position,B_ptr[y]->neg_position);
 	calculate_fanin_out();
 	calculate_HCG_VCG();
-	// if (Temperature<20){
-	double unrotate_area = calculate_Area();
-	int move = rand()%3;
+// 	if (Temperature<20){
+// 	double unrotate_area = calculate_Area();
+// 	int move = rand()%3;
 
-	if(move==0)
-		rotate_both(x,y);
-	else if(move == 1)
-		rotate_x(x);
-	else if(move == 2)
-		rotate_y(y);	
-	calculate_fanin_out();
-	calculate_HCG_VCG();
-	double rotate_area = calculate_Area();
-	if (unrotate_area<rotate_area){
-		if(move==0)
-			rotate_both(x,y);
-		else if(move == 1)
-			rotate_x(x);
-		else if(move == 2)
-			rotate_y(y);		
-	}
-	// calculate_fanin_out();
-	// calculate_HCG_VCG();
-	// }
+// 	if(move==0)
+// 		rotate_both(x,y);
+// 	else if(move == 1)
+// 		rotate_x(x);
+// 	else if(move == 2)
+// 		rotate_y(y);	
+// 	calculate_fanin_out();
+// 	calculate_HCG_VCG();
+// 	double rotate_area = calculate_Area();
+// 	if (unrotate_area<rotate_area){
+// 		if(move==0)
+// 			rotate_both(x,y);
+// 		else if(move == 1)
+// 			rotate_x(x);
+// 		else if(move == 2)
+// 			rotate_y(y);		
+// 	}
+// 	calculate_fanin_out();
+// 	calculate_HCG_VCG();
+// 	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -282,26 +282,26 @@ void swap_both(int x, int y, double Temperature)
 	calculate_fanin_out();
 	calculate_HCG_VCG();
 	// if (Temperature < 20){
-	double unrotate_area = calculate_Area();
-	int move = rand()%3;
+	// double unrotate_area = calculate_Area();
+	// int move = rand()%3;
 
-	if(move==0)
-		rotate_both(x,y);
-	else if(move == 1)
-		rotate_x(x);
-	else if(move == 2)
-		rotate_y(y);	
-	calculate_fanin_out();
-	calculate_HCG_VCG();
-	double rotate_area = calculate_Area();
-	if (unrotate_area<rotate_area){
-		if(move==0)
-			rotate_both(x,y);
-		else if(move == 1)
-			rotate_x(x);
-		else if(move == 2)
-			rotate_y(y);		
-		}
+	// if(move==0)
+	// 	rotate_both(x,y);
+	// else if(move == 1)
+	// 	rotate_x(x);
+	// else if(move == 2)
+	// 	rotate_y(y);	
+	// calculate_fanin_out();
+	// calculate_HCG_VCG();
+	// double rotate_area = calculate_Area();
+	// if (unrotate_area<rotate_area){
+	// 	if(move==0)
+	// 		rotate_both(x,y);
+	// 	else if(move == 1)
+	// 		rotate_x(x);
+	// 	else if(move == 2)
+	// 		rotate_y(y);		
+	// 	}
 	// 	calculate_fanin_out();
 	// 	calculate_HCG_VCG();
 	// }

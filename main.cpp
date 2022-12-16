@@ -135,7 +135,7 @@ for(int i=0;i<B.size();i++)
 for(int i=0; i<B_ptr.size(); i++)
 {
 	B_ptr[i]->pos_position = i;
-	B_ptr[i]->neg_position = i;
+	B_ptr[i]->neg_position = B_ptr.size() - i;
 	pos_seq.push_back(B_ptr[i]);
 	neg_seq.push_back(B_ptr[i]);	
 }
@@ -183,7 +183,7 @@ bool  b;
 bool obj = 0;
 
 /////////////////////////////////////////////////////////////////////////////
-string var7 = "result_rotate_all/";
+string var7 = "result/";
 string constant_var7 = numBlocks_st +"_Results.csv";
 string var8;
 if(Annealing_Type == "-withouttb")
@@ -224,7 +224,7 @@ while(Temperature>freezing_temperature)
 		Delta_Area = next_Area - current_Area;
 		Delta_Height = Height_Final - current_Height;
 		double alpha = 0.2;
-		Delta_Total = (alpha*(Width_Final - chip_width) + (1-alpha)*Delta_Area);
+		Delta_Total = (Width_Final-chip_width)*alpha + (1-alpha) *Delta_Area;
 		// Delta_Total = Delta_Area;
 		//current_wirelength = calculate_wirelength();
 		// if (Width_Final - chip_width > 0){
@@ -263,7 +263,7 @@ while(Temperature>freezing_temperature)
 		Delta_Area = next_Area - current_Area;
 		Delta_Height = Height_Final - current_Height;
 		double alpha = 0.2;
-		Delta_Total = (alpha*(Width_Final - chip_width) + (1-alpha)*Delta_Area);
+		Delta_Total = (Width_Final-chip_width)*alpha + (1-alpha) *Delta_Area;
 		bool b = AcceptedMove(Delta_Total,Temperature);
 		bool c =Tabu_judgement(random1, random2, move);
 		if (Delta_Area < 0){
@@ -321,7 +321,7 @@ Temperature = Temperature*Temperature_Step;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////// ### Write Everything to a File //////////////////////////////////////////////
-string var1 = "result_rotate_all/";
+string var1 = "result/";
 string constant_val = numBlocks_st + ".txt";
 string var2; 
 //cout << Annealing_Type << endl;
