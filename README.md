@@ -1,10 +1,10 @@
 # MICS6000I_final
-mkdir build 
 
-mkdir result
 
-cd build 
+`mkdir result`
 
-cmake ..
+`cd build`
 
-make
+`cmake ..`
+
+`make`
